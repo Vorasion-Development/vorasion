@@ -1,0 +1,20 @@
+{
+  "category": "commands"
+}
+---
+import { ApplyOptions } from '@sapphire/decorators'
+import { Command } from '@sapphire/framework'
+import { ChatInputCommand } from '@vorasion/decorators'
+
+@ApplyOptions<Command.Options>({
+  name: '{{name}}',
+})
+@ChatInputCommand({
+  name: '{{name}}',
+  description: 'A simple slash command that replies with a message.',
+})
+export class {{name}}Command extends Command {
+  public override async chatInputRun(interaction: Command.ChatInputCommandInteraction) {
+    await interaction.reply(`Hello from ${this.name}!`)
+  }
+}

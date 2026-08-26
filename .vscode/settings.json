@@ -1,0 +1,26 @@
+{
+    // Editor Configuration
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+
+    // Use project TypeScript
+    "js/ts.tsdk.path": "node_modules/typescript/lib",
+    "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
+ 
+    // Ignore inquirer updates, commitizen and cz-commitlint need this
+    // specific version for some reason.
+    "npmx.ignore.upgrade": [
+        "inquirer@14.0.2"
+    ],
+
+    // allow autocomplete for ArkType expressions like "string | num"
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    
+    // prioritize ArkType's "type" for autoimports
+    "js/ts.preferences.autoImportSpecifierExcludeRegexes": [
+        "^(node:)?os$"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "npmx-dev.vscode-npmx",
+        "oven.bun-vscode",
+        "oxc.oxc-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "wayou.vscode-todo-highlight",
+        "yoavbls.pretty-ts-errors"
+    ],
+    "unwantedRecommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+    ]
+}

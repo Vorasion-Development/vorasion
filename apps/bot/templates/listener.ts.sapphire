@@ -1,0 +1,13 @@
+{
+    "category": "listeners"
+}
+---
+import { ApplyOptions } from '@sapphire/decorators'
+import { Listener } from '@sapphire/framework'
+
+@ApplyOptions<Listener.Options>({})
+export class {{name}}Listener extends Listener<EventType> {
+  public run() {
+    this.container.logger.info(`The ${String(this.event)} event has been emitted!`)
+  }
+}
