@@ -1,7 +1,11 @@
 {
   "name": "@vorasion/repo",
-  "type": "module",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "type": "module",
   "scripts": {
     "check": "bun format --check && bun lint && bun typecheck",
     "commit": "cz",
@@ -31,16 +35,12 @@
   "peerDependencies": {
     "typescript": "^7.0.2"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "packageManager": "bun@1.4.0",
   "devEngines": {
     "packageManager": {
       "name": "bun",
-      "onFail": "download",
-      "version": "1.4"
+      "version": "1.4",
+      "onFail": "download"
     }
-  }
+  },
+  "packageManager": "bun@1.4.0"
 }

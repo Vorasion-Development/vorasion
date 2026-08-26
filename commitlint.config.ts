@@ -2,7 +2,6 @@ import { RuleConfigSeverity, type UserConfig } from '@commitlint/types'
 
 export default {
   extends: ['@commitlint/config-conventional'],
-  parserPreset: 'conventional-changelog-conventionalcommits',
   rules: {
     'body-case': [RuleConfigSeverity.Error, 'always', 'sentence-case'],
     'body-max-line-length': [RuleConfigSeverity.Error, 'always', 400],
