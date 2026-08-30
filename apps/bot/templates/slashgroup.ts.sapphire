@@ -2,9 +2,8 @@
   "category": "commands"
 }
 ---
-import { ApplyOptions } from '@sapphire/decorators'
 import { Subcommand } from '@sapphire/plugin-subcommands'
-import { ChatInputCommand } from '@vorasion/decorators'
+import { ApplyOptions, ChatInputCommand, createSubcommandMixin } from '@vorasion/decorators'
 
 @ApplyOptions<Subcommand.Options>({
   name: '{{name}}',
@@ -25,7 +24,7 @@ import { ChatInputCommand } from '@vorasion/decorators'
     }
   ]
 })
-export class {{name}}Group extends Subcommand {
+export class {{name}}Group extends createSubcommandMixin(Subcommand) {
   public async helloSubcommandRun(interaction: Subcommand.ChatInputCommandInteraction) {
     await interaction.reply({ content: 'Hello there!' })
   }

@@ -9,6 +9,10 @@ const SUBCOMMAND_COOLDOWN_BUCKET_KEY = 'PluginSubcommandCooldown'
 
 const baseMixin = <T extends Constructor<any>>(constructor: T) =>
   class extends constructor {
+    public get container() {
+      return container
+    }
+
     private getPreconditionsStore() {
       return container.stores.get('preconditions')
     }

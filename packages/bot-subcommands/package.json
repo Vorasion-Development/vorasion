@@ -1,0 +1,25 @@
+{
+  "name": "@vorasion/bot-subcommands",
+  "type": "module",
+  "module": "src/index.ts",
+  "devDependencies": {
+    "@types/bun": "^1.4",
+    "@types/common-tags": "^1.8.4"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "peerDependencies": {
+    "@sapphire/discord.js-utilities": "^7.3.3",
+    "@sapphire/framework": "^5.5.1",
+    "@sapphire/plugin-subcommands": "^7.0.1",
+    "@sapphire/result": "^2.8.0",
+    "@sapphire/timestamp": "^1.0.5",
+    "@sapphire/utilities": "^3.18.2",
+    "@vorasion-dev/discord-ui-kit": "^0.0.1",
+    "@vorasion/decorators": "workspace:*",
+    "@vorasion/types": "workspace:*",
+    "common-tags": "^1.8.2",
+    "typescript": "^7"
+  }
+}

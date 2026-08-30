@@ -1,9 +1,11 @@
-import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener } from '@sapphire/framework'
+import { ApplyOptions } from '@vorasion/decorators'
 
-@ApplyOptions<Listener.Options>({})
+@ApplyOptions<Listener.Options>({
+  event: Events.ChatInputCommandDenied,
+})
 export class ChatInputCommandDeniedListener extends Listener<typeof Events.ChatInputCommandDenied> {
-  public run() {
+  public override run() {
     this.container.logger.info(`The ${String(this.event)} event has been emitted!`)
   }
 }

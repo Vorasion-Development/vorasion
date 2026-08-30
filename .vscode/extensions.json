@@ -6,7 +6,9 @@
         "streetsidesoftware.code-spell-checker",
         "usernamehw.errorlens",
         "wayou.vscode-todo-highlight",
-        "yoavbls.pretty-ts-errors"
+        "yoavbls.pretty-ts-errors",
+        "christian-kohler.npm-intellisense",
+        "arktypeio.arkdark"
     ],
     "unwantedRecommendations": [
         "dbaeumer.vscode-eslint",

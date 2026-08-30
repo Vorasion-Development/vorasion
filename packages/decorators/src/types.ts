@@ -1,5 +1,7 @@
 import { Command, type CorePreconditions } from '@sapphire/framework'
-import type { SlashCommandBuilder, SlashCommandSubcommandBuilder } from 'discord.js'
+import type { SlashCommandBuilder, SlashCommandSubcommandBuilder, SlashCommandSubcommandGroupBuilder } from 'discord.js'
+
+export { SlashCommandBuilder } from 'discord.js'
 
 interface CommandOptionBase {
   name: string
@@ -37,6 +39,8 @@ export type CommandOption = StringCommandOption | NumberCommandOption | BooleanC
 
 export type AnySlashCommandBuilder = SlashCommandBuilder | SlashCommandSubcommandBuilder
 
+export type AnySubcommandAddableBuilder = SlashCommandBuilder | SlashCommandSubcommandGroupBuilder
+
 export type CooldownPreconditionInstance = (typeof CorePreconditions)['Cooldown']['prototype']
 
 export interface CommandOptions extends Command.Options {
@@ -46,4 +50,5 @@ export interface CommandOptions extends Command.Options {
 
 export interface SubcommandOptions extends Command.Options {
   slashOptions?: CommandOption[]
+  groupSubcommands?: SubcommandOptions[]
 }

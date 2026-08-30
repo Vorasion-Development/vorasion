@@ -1,6 +1,6 @@
-import { ApplyOptions } from '@sapphire/decorators'
 import { Subcommand } from '@sapphire/plugin-subcommands'
-import { ChatInputCommand, createSubcommandMixin } from '@vorasion/decorators'
+import { PingSubcommand } from '@vorasion/bot-subcommands'
+import { ApplyOptions, ChatInputCommand, createSubcommandMixin } from '@vorasion/decorators'
 
 @ApplyOptions<Subcommand.Options>({
   name: 'info',
@@ -23,6 +23,6 @@ import { ChatInputCommand, createSubcommandMixin } from '@vorasion/decorators'
 })
 export class InfoGroup extends createSubcommandMixin(Subcommand) {
   public async pingSubcommandRun(interaction: Subcommand.ChatInputCommandInteraction) {
-    await interaction.reply({ content: 'Pong!' })
+    await new PingSubcommand().run(interaction)
   }
 }

@@ -11,6 +11,7 @@
     "commit": "cz",
     "format": "oxfmt",
     "lint": "oxlint",
+    "orm": "bun run --env-file=./.env.local --filter @vorasion/orm orm",
     "prepare": "husky",
     "sapphire": "sapphire",
     "security": "socket scan create .",

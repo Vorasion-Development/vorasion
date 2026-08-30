@@ -2,9 +2,8 @@
   "category": "commands"
 }
 ---
-import { ApplyOptions } from '@sapphire/decorators'
 import { Command } from '@sapphire/framework'
-import { ChatInputCommand } from '@vorasion/decorators'
+import { ApplyOptions, ChatInputCommand, createCommandMixin } from '@vorasion/decorators'
 
 @ApplyOptions<Command.Options>({
   name: '{{name}}',
@@ -13,7 +12,7 @@ import { ChatInputCommand } from '@vorasion/decorators'
   name: '{{name}}',
   description: 'A simple slash command that replies with a message.',
 })
-export class {{name}}Command extends Command {
+export class {{name}}Command extends createCommandMixin(Command) {
   public override async chatInputRun(interaction: Command.ChatInputCommandInteraction) {
     await interaction.reply(`Hello from ${this.name}!`)
   }

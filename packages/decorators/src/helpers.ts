@@ -2,12 +2,45 @@ import { ApplicationCommandRegistries } from '@sapphire/framework'
 
 import type {
   AnySlashCommandBuilder,
+  AnySubcommandAddableBuilder,
   CommandOption,
   StringCommandOption,
   NumberCommandOption,
   BooleanCommandOption,
   UserCommandOption,
+  SubcommandOptions,
+  SlashCommandBuilder,
 } from './types'
+
+export function addSubcommandToBuilder(builder: AnySubcommandAddableBuilder, subcommand: SubcommandOptions) {
+  builder.addSubcommand((builder) => {
+    const { name, description, slashOptions } = subcommand
+
+    if (!name) throw new Error('Subcommand name is required to register a subcommand.')
+
+    builder.setName(name).setDescription(description ?? 'No description provided.')
+    addOptionsToBuilder(builder, slashOptions)
+    return builder
+  })
+}
+
+export function addSubcommandGroupToBuilder(builder: SlashCommandBuilder, subcommandGroup: SubcommandOptions) {
+  builder.addSubcommandGroup((builder) => {
+    const { name, description, groupSubcommands } = subcommandGroup
+
+    if (!name) throw new Error('Subcommand group name is required to register a subcommand group.')
+    if (!groupSubcommands || groupSubcommands.length === 0)
+      throw new Error('Subcommand group must have at least one subcommand.')
+
+    builder.setName(name).setDescription(description ?? 'No description provided.')
+
+    for (const subcommand of groupSubcommands) {
+      addSubcommandToBuilder(builder, subcommand)
+    }
+
+    return builder
+  })
+}
 
 export function getRegistry(name: string) {
   return ApplicationCommandRegistries.acquire(name)
@@ -64,6 +97,8 @@ function addNumberOption(builder: AnySlashCommandBuilder, option: NumberCommandO
 }
 
 function addBooleanOption(builder: AnySlashCommandBuilder, option: BooleanCommandOption) {
+  if (option.type !== 'boolean') return
+
   builder.addBooleanOption((opt) =>
     opt
       .setName(option.name)
@@ -73,6 +108,8 @@ function addBooleanOption(builder: AnySlashCommandBuilder, option: BooleanComman
 }
 
 function addUserOption(builder: AnySlashCommandBuilder, option: UserCommandOption) {
+  if (option.type !== 'user') return
+
   builder.addUserOption((opt) =>
     opt
       .setName(option.name)

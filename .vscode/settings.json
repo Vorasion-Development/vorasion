@@ -22,5 +22,8 @@
     // prioritize ArkType's "type" for autoimports
     "js/ts.preferences.autoImportSpecifierExcludeRegexes": [
         "^(node:)?os$"
-    ]
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }

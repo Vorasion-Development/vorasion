@@ -1,6 +1,5 @@
-import './types/index.mts'
+import '@vorasion/types'
 // Sapphire Plugins
-import '@sapphire/plugin-api/register'
 import '@sapphire/plugin-hmr/register'
 import '@sapphire/plugin-i18next/register'
 import '@sapphire/plugin-logger/register'
@@ -17,10 +16,12 @@ import { GatewayIntentBits } from 'discord.js'
 
 import './registry-behavior'
 
+const basePath = path.join(__dirname)
+
 const client = new SapphireClient({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages],
   i18n: {
-    defaultLanguageDirectory: path.join(__dirname, 'locales'),
+    defaultLanguageDirectory: path.join(basePath, 'locales'),
   },
   tasks: {
     bull: {
@@ -29,7 +30,7 @@ const client = new SapphireClient({
       },
     },
   },
-  baseUserDirectory: path.join(__dirname),
+  baseUserDirectory: basePath,
 })
 
 client.login(env.TOKEN).catch((error) => {
