@@ -1,5 +1,5 @@
 {
-  "name": "@vorasion/repo",
+  "name": "@vorasion/monorepo",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -11,18 +11,26 @@
     "commit": "cz",
     "format": "oxfmt",
     "lint": "oxlint",
-    "orm": "bun run --env-file=./.env.local --filter @vorasion/orm orm",
+    "orm": "bun run runner --filter @vorasion/orm orm",
+    "orm:prod": "bun run runner:prod --filter @vorasion/orm orm",
     "prepare": "husky",
+    "runner": "bun run --bun --elide-lines=0 --env-file=./.env.local",
+    "runner:prod": "bun run --bun --silent --env-file=./.env.prod",
     "sapphire": "sapphire",
     "security": "socket scan create .",
-    "update": "taze -r",
-    "typecheck": "tsc --noEmit"
+    "start-discord": "bun run runner --hot --filter @vorasion/discord start",
+    "start-discord:prod": "bun run runner:prod --filter @vorasion/discord start",
+    "start-telegram": "bun run runner --hot --filter @vorasion/telegram start",
+    "start-telegram:prod": "bun run runner:prod --filter @vorasion/telegram start",
+    "typecheck": "tsc --noEmit",
+    "update": "taze -r"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
     "@commitlint/cz-commitlint": "^21.2.2",
     "@commitlint/types": "^21.2.0",
+    "@gramio/jsx": "^0.1.0",
     "@sapphire/cli": "^1.9.3",
     "@types/bun": "^1.4",
     "commitizen": "^4.3.2",

@@ -1,3 +1,4 @@
+bun format
 bun check
 
 # Formatting lmao.

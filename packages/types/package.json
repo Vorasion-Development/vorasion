@@ -1,20 +1,20 @@
 {
   "name": "@vorasion/types",
   "type": "module",
-  "module": "index.mts",
+  "module": "src/index.mts",
   "exports": {
-    ".": "./index.mts"
+    ".": "./src/index.mts"
   },
   "dependencies": {
     "@sapphire/pieces": "^4.4.1",
+    "@vorasion-dev/discord-ui-kit": "0.0.1",
+    "@vorasion/env": "workspace:*",
     "@vorasion/orm": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "^1.4"
   },
   "peerDependencies": {
-    "@vorasion-dev/discord-ui-kit": "0.0.1",
-    "@vorasion/env": "workspace:*",
     "typescript": "^7"
   }
 }

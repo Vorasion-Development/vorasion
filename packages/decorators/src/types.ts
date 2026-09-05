@@ -43,12 +43,16 @@ export type AnySubcommandAddableBuilder = SlashCommandBuilder | SlashCommandSubc
 
 export type CooldownPreconditionInstance = (typeof CorePreconditions)['Cooldown']['prototype']
 
-export interface CommandOptions extends Command.Options {
+export interface BaseCommandOptions extends Command.Options {
   slashOptions?: CommandOption[]
+}
+
+export interface CommandOptions extends BaseCommandOptions {
   subcommands?: SubcommandOptions[]
 }
 
-export interface SubcommandOptions extends Command.Options {
-  slashOptions?: CommandOption[]
-  groupSubcommands?: SubcommandOptions[]
+export interface SubcommandOptions extends BaseCommandOptions {
+  groupSubcommands?: SubcommandOptionsWithGroup[]
 }
+
+export interface SubcommandOptionsWithGroup extends Omit<SubcommandOptions, 'groupSubcommands'> {}

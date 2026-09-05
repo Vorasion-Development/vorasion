@@ -8,14 +8,6 @@
   "scripts": {
     "orm": "mikro-orm"
   },
-  "devDependencies": {
-    "@mikro-orm/cli": "^7.1.14",
-    "@types/bun": "^1.4"
-  },
-  "peerDependencies": {
-    "@vorasion/env": "workspace:*",
-    "typescript": "^7"
-  },
   "dependencies": {
     "@mikro-orm/core": "^7.1.14",
     "@mikro-orm/migrations": "^7.1.14",
@@ -23,6 +15,16 @@
     "@mikro-orm/seeder": "^7.1.14",
     "@mikro-orm/sql-highlighter": "^1.0.1",
     "@sapphire/timestamp": "^1.0.5",
+    "@sapphire/utilities": "^3.18.2",
+    "change-case": "^5.4.4",
     "dataloader": "^2.2.3"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^7.1.14",
+    "@types/bun": "^1.4"
+  },
+  "peerDependencies": {
+    "@vorasion/env": "workspace:*",
+    "typescript": "^7"
   }
 }

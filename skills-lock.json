@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "bun-docs": {
+      "source": "wenerme/ai",
+      "sourceType": "github",
+      "skillPath": "skills/bun-docs/SKILL.md",
+      "computedHash": "11a63df3e2aae7c7d6f421c8e267320e39a27936316d100744011528d281df5a"
+    },
+    "discord-js-official-docs": {
+      "source": "adamalex/discordjs-pi",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/discord-js-official-docs/SKILL.md",
+      "computedHash": "d034d988bae076efe42711233b57678ae2530effd3b5e013cdb7b449bd57f2ff"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
+    },
+    "mikroorm-docs": {
+      "source": "wenerme/ai",
+      "sourceType": "github",
+      "skillPath": "skills/mikroorm-docs/SKILL.md",
+      "computedHash": "80ab2b107046ecc8c7f3b7b02005bc3999b4725a19cc7dffccc676ffac0561b4"
+    },
+    "requesting-code-review": {
+      "source": "wenerme/ai",
+      "sourceType": "github",
+      "skillPath": "skills/requesting-code-review/SKILL.md",
+      "computedHash": "004f340ae65811095d6a9bb0a759c87d0a8085c5e705dbb019b011626293d2e9"
+    }
+  }
+}

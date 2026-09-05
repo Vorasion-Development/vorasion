@@ -1,0 +1,30 @@
+{
+  "name": "@vorasion/telegram",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@fluent/bundle": "^0.19.1",
+    "@gramio/auto-retry": "^0.0.3",
+    "@gramio/autoload": "^1.1.0",
+    "@gramio/i18n": "^1.5.0",
+    "@gramio/jsx": "^0.1.0",
+    "@gramio/pagination": "^0.0.8",
+    "@gramio/split": "^0.0.1",
+    "@vorasion/commands": "workspace:*",
+    "@vorasion/env": "workspace:*",
+    "@vorasion/orm": "workspace:*",
+    "gramio": "^0.14.0",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}

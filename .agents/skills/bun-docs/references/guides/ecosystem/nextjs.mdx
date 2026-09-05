@@ -1,0 +1,86 @@
+---
+title: Build an app with Next.js and Bun
+mode: center
+---
+
+[Next.js](https://nextjs.org/) is a React framework for building full-stack web applications. It supports server-side rendering, static site generation, and API routes. Bun installs packages fast and can run Next.js development and production servers.
+
+---
+
+  
+    Use the interactive CLI to scaffold a new Next.js project and install its dependencies.
+
+    ```sh terminal icon="terminal"
+    bun create next-app@latest my-bun-app
+    ```
+
+  
+  
+    Change to the project directory and run the dev server with Bun.
+
+    ```sh terminal icon="terminal"
+    cd my-bun-app
+    bun --bun run dev
+    ```
+
+    This starts the Next.js dev server with Bun's runtime.
+
+    Open [`http://localhost:3000`](http://localhost:3000) in your browser to see the result. Changes you make to `app/page.tsx` are hot-reloaded in the browser.
+
+  
+  
+    Prefix the Next.js CLI commands in your `package.json` scripts with `bun --bun` so that Bun executes the Next.js CLI for `dev`, `build`, and `start`.
+
+    ```json package.json icon="file-json"
+    {
+      "scripts": {
+        "dev": "bun --bun next dev", // [!code ++]
+        "build": "bun --bun next build", // [!code ++]
+        "start": "bun --bun next start" // [!code ++]
+      }
+    }
+    ```
+
+  
+
+---
+
+## Hosting
+
+<Columns cols={3}>
+  
+    Deploy on Vercel
+  
+  
+    Deploy on Railway
+  
+  
+    Deploy on DigitalOcean
+  
+  
+    Deploy on AWS Lambda
+  
+  
+    Deploy on Google Cloud Run
+  
+  
+    Deploy on Render
+  
+</Columns>
+
+---
+
+## Templates
+
+<Columns cols={2}>
+  
+    A basic App Router starter with Bun, Next.js, and Tailwind CSS.
+  
+  
+    A full-stack todo application built with Bun, Next.js, and PostgreSQL.
+  
+</Columns>
+
+---
+
+Refer to the [Next.js documentation](https://nextjs.org/docs) for more on building and deploying Next.js applications.

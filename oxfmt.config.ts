@@ -10,5 +10,5 @@ export default defineConfig({
   tabWidth: 2,
   useTabs: false,
   printWidth: 120,
-  ignorePatterns: ['node_modules', '.git', '.husky', '.vscode', 'dist', 'build', '.knip.jsonc'],
+  ignorePatterns: ['node_modules', '.git', '.husky', '.vscode', 'dist', 'build', '.knip.jsonc', '.agents'],
 })
